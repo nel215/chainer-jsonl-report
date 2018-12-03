@@ -59,10 +59,10 @@ class JsonlReport(extensions.LogReport):
             stats_cpu['iteration'] = updater.iteration
             stats_cpu['elapsed_time'] = trainer.elapsed_time
 
-            self._latest_log.update(stats_cpu)
-
             if self._postprocess is not None:
                 self._postprocess(stats_cpu)
+
+            self._latest_log.update(stats_cpu)
 
             if self._log_name is not None:
                 path = os.path.join(trainer.out, self._log_name)
