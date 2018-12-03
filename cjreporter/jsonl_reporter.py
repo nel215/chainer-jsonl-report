@@ -23,9 +23,11 @@ class LatestLog:
 
 class JsonlReport(extensions.LogReport):
 
-    # TODO: fix args and kwargs
-    def __init__(self, *args, **kwargs):
-        super(JsonlReport, self).__init__(*args, **kwargs)
+    def __init__(
+        self, keys=None, trigger=(1, 'epoch'),
+        postprocess=None, log_name='log',
+    ):
+        super(JsonlReport, self).__init__(keys, trigger, postprocess, log_name)
         self._initialized = {}
         self._latest_log = LatestLog()
 
