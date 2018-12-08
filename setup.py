@@ -1,8 +1,9 @@
+import pypandoc
 from setuptools import setup
 import chainer_jsonl_report
 
 with open('./README.md') as fp:
-    readme = ''.join(fp.readlines())
+    readme = pypandoc.convert_file('./README.md', 'rst')
 
 
 setup(
