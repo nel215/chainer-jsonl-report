@@ -1,3 +1,6 @@
 .python-version
 __pycache__
 result/*
+chainer_jsonl_report.egg-info/
+dist/*
+build/*
