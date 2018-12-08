@@ -4,6 +4,12 @@
 
 JSONL formatted LogReport extention for chainer.
 
+# Installation
+
+```
+$ pip install chainer-jsonl-report
+```
+
 # Usage
 
 ```python3
