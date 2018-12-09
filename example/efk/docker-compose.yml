@@ -1,0 +1,24 @@
+version: '3'
+services:
+  main:
+    build:
+      context: ../
+      dockerfile: ./efk/Dockerfile
+    volumes:
+      - cache:/root/.chainer
+      - result:/root/result
+  fluentd:
+    build:
+      context: ./fluentd/
+    volumes:
+      - ./fluentd/etc:/fluentd/etc
+      - result:/result
+  elasticsearch:
+    image: elasticsearch:5.6-alpine
+  kibana:
+    image: kibana:5.6
+    ports:
+      - 5601:5601
+volumes:
+  cache:
+  result:
